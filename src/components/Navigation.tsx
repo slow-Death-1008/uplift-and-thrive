@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Brain className="w-8 h-8 text-primary animate-breathe" />
-            <span className="text-xl font-semibold text-foreground">MindCare</span>
+            <span className="text-xl font-semibold text-foreground">SAHAY</span>
           </div>
 
           <div className="flex items-center space-x-1">
