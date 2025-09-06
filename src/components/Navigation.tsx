@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Brain, Music, BarChart3, LogOut } from "lucide-react";
+import { Brain, Music, BarChart3, LogOut, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -7,7 +7,8 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", icon: Brain, label: "Assessment" },
+    { path: "/", icon: Brain, label: "Chat" },
+    { path: "/assessment", icon: Heart, label: "Assessment" },
     { path: "/library", icon: Music, label: "Library" },
     { path: "/dashboard", icon: BarChart3, label: "Dashboard" },
   ];
