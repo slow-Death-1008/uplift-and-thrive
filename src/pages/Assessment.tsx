@@ -175,9 +175,9 @@ const Assessment = () => {
                 )}
 
                 <div className="flex gap-4">
-                  <Button onClick={() => navigate("/chat")} className="flex-1" variant="calm">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Start Chatting
+                  <Button onClick={() => navigate("/library")} className="flex-1" variant="calm">
+                    <Music className="w-4 h-4 mr-2" />
+                    Explore Library
                   </Button>
                   <Button onClick={() => navigate("/dashboard")} className="flex-1" variant="peaceful">
                     View Dashboard
