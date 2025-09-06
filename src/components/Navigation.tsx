@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Brain, Music, BarChart3, LogOut, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
+
 
 const Navigation = () => {
   const location = useLocation();
@@ -18,8 +20,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Brain className="w-8 h-8 text-primary animate-breathe" />
-            <span className="text-xl font-semibold text-foreground">SAHAY</span>
+            <img src={logo} alt="SAHAY Logo" className="w-12 h-10" />
+            <span className="text-xl font-extrabold text-foreground">SAHAY</span>
           </div>
 
           <div className="flex items-center space-x-1">
