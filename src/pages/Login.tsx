@@ -24,7 +24,7 @@ const Login = () => {
         title: "Welcome to MindCare!",
         description: "You've successfully logged in.",
       });
-      navigate("/");
+      navigate("/assessment");
       setIsLoading(false);
     }, 1500);
   };
