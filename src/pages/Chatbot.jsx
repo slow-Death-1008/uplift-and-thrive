@@ -72,7 +72,7 @@ const Chatbot = () => {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const simulateTyping = (callback: () => void, delay = 1500) => {
+  const simulateTyping = (callback, delay = 1500) => {
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
