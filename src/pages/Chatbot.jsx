@@ -101,7 +101,7 @@ const Chatbot = () => {
     });
   };
 
-  const handleAssessmentAnswer = (answer: string) => {
+  const handleAssessmentAnswer = (answer) => {
     const newAnswers = [...assessmentAnswers, answer];
     setAssessmentAnswers(newAnswers);
     
@@ -140,7 +140,7 @@ const Chatbot = () => {
     }
   };
 
-  const calculateWellnessScore = (answers: string[]) => {
+  const calculateWellnessScore = (answers) => {
     const scores = answers.map((answer, index) => {
       const options = assessmentQuestions[index].options;
       const answerIndex = options.indexOf(answer);
@@ -151,7 +151,7 @@ const Chatbot = () => {
     return Math.round(averageScore + 20); // Add base score of 20
   };
 
-  const getRecommendation = (score: number) => {
+  const getRecommendation = (score) => {
     if (score >= 70) {
       return "You're doing great! Focus on maintaining your current wellness practices. Consider exploring our music library for relaxation and continued growth.";
     } else if (score >= 50) {

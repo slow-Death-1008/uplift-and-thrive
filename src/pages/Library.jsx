@@ -70,10 +70,10 @@ const musicCategories = [
 
 const Library = () => {
   const [activeCategory, setActiveCategory] = useState("calming");
-  const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
-  const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
+  const [favorites, setFavorites] = useState(new Set());
 
-  const togglePlay = (trackName: string) => {
+  const togglePlay = (trackName) => {
     if (currentlyPlaying === trackName) {
       setCurrentlyPlaying(null);
     } else {
@@ -81,7 +81,7 @@ const Library = () => {
     }
   };
 
-  const toggleFavorite = (trackName: string) => {
+  const toggleFavorite = (trackName) => {
     const newFavorites = new Set(favorites);
     if (favorites.has(trackName)) {
       newFavorites.delete(trackName);

@@ -79,7 +79,7 @@ const Assessment = () => {
     setHasStarted(true);
   };
 
-  const handleAnswer = (value: string) => {
+  const handleAnswer = (value) => {
     setAnswers({ ...answers, [currentQuestion]: value });
   };
 
