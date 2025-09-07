@@ -67,7 +67,7 @@ const questions = [
 const Assessment = () => {
   const [hasStarted, setHasStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [additionalConcerns, setAdditionalConcerns] = useState("");
   const navigate = useNavigate();

@@ -3,11 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-mental-health.jpg";
 
-interface WelcomeHeroProps {
-  onStartAssessment: () => void;
-}
-
-const WelcomeHero = ({ onStartAssessment }: WelcomeHeroProps) => {
+const WelcomeHero = ({ onStartAssessment }) => {
   const features = [
     {
       icon: Heart,
