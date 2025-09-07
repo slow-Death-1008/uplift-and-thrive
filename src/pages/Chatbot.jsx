@@ -9,21 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/Navigation";
 
-interface Message {
-  id: string;
-  type: 'user' | 'bot';
-  content: string;
-  timestamp: Date;
-  isAssessment?: boolean;
-  assessmentData?: {
-    question: string;
-    options?: string[];
-    currentQuestion?: number;
-    totalQuestions?: number;
-  };
-}
-
-const initialBotMessage: Message = {
+const initialBotMessage = {
   id: '1',
   type: 'bot',
   content: "Hello! I'm your mental wellness companion. I'm here to support you on your journey to better mental health. Would you like to start with a quick wellness assessment, or is there something specific you'd like to talk about?",
@@ -54,15 +40,15 @@ const assessmentQuestions = [
 ];
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState<Message[]>([initialBotMessage]);
+  const [messages, setMessages] = useState([initialBotMessage]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [assessmentMode, setAssessmentMode] = useState(false);
   const [currentAssessmentQuestion, setCurrentAssessmentQuestion] = useState(0);
-  const [assessmentAnswers, setAssessmentAnswers] = useState<string[]>([]);
+  const [assessmentAnswers, setAssessmentAnswers] = useState([]);
   const [showResetDialog, setShowResetDialog] = useState(false);
   
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -74,8 +60,8 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  const addMessage = (content: string, type: 'user' | 'bot', isAssessment = false, assessmentData?: any) => {
-    const newMessage: Message = {
+  const addMessage = (content, type, isAssessment = false, assessmentData) => {
+    const newMessage = {
       id: Date.now().toString(),
       type,
       content,
@@ -213,7 +199,7 @@ const Chatbot = () => {
     });
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
